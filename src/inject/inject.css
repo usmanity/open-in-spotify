@@ -1,0 +1,38 @@
+/**
+ * Place your custom CSS styles here.
+ **/
+.find-on-spotify {
+  display: inline-block;
+  float: left;
+  left: 150px;
+  clear: both;
+  position: relative;
+  padding: 5px 3px 5px 30px;
+  width: 94px;
+  color: white;
+  background-color: #E62117;
+  border-radius: 2px;
+  top: -24px;
+  background-image: url('http://mhmd.us/116Fr+');
+  background-size: 15px;
+  background-repeat: no-repeat;
+  background-position: 8px center;
+}
+.find-on-spotify:hover {
+  cursor: pointer;
+  text-decoration: none;
+  background-color: #CC181E;
+}
+.amazon-link-image {
+  width: 20px;
+}
+.amazon-link {
+  position: relative;
+  top: 5px;
+  opacity: 0.4;
+  height: 30px;
+  padding: 7px;
+}
+.amazon-link:hover {
+  opacity: 1.0;
+}

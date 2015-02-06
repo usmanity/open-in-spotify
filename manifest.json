@@ -1,0 +1,47 @@
+{
+  "name": "Youtube to Spotify",
+  "version": "0.4.1",
+  "manifest_version": 2,
+  "description": "Play songs in Spotify while listening to them on Youtube.",
+  "homepage_url": "http://usmanity.com",
+  "icons": {
+    "16": "icons/icon16.png",
+    "19": "icons/icon19.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png",
+    "256": "icons/icon256.png"
+  },
+  "default_locale": "en",
+  "background": {
+    "page": "src/bg/background.html",
+    "persistent": true
+  },
+  "page_action": {
+    "default_icon": "icons/icon19.png",
+    "default_title": "Searching youtube...spotify...",
+    "default_popup": "src/page_action/page_action.html"
+  },
+  "permissions": [
+    "https://*.youtube.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.youtube.com/*"
+      ],
+      "css": [
+        "src/inject/inject.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://*.youtube.com/*"
+      ],
+      "js": [
+        "src/inject/inject.js",
+        "js/jquery.js"
+      ]
+    }
+  ],
+  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'"
+}
