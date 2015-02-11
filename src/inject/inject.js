@@ -36,7 +36,6 @@ var addLink = function(){
 	$.get(url, function(data){
 			spotifyResponse = data;
 			link = data.tracks.items[0].uri;
-			console.log(link);
 			var find = $("<a href='" + link +"' class='find-on-spotify'>Open in Spotify</a>");
 			button.append(find);
 			$('.find-on-spotify').click(pausePlayer);

@@ -1,6 +1,6 @@
 {
   "name": "Youtube to Spotify",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "manifest_version": 2,
   "description": "Play songs in Spotify while listening to them on Youtube.",
   "homepage_url": "http://usmanity.com",
