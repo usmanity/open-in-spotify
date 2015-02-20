@@ -2,8 +2,8 @@
   "name": "Youtube to Spotify",
   "version": "1.0.0",
   "manifest_version": 2,
-  "description": "Play songs in Spotify while listening to them on Youtube.",
-  "homepage_url": "http://usmanity.com",
+  "description": "One-click YouTube to Spotify button.",
+  "homepage_url": "http://usmanity.com/open-in-spotify",
   "icons": {
     "16": "icons/icon16.png",
     "19": "icons/icon19.png",
@@ -18,7 +18,7 @@
   },
   "page_action": {
     "default_icon": "icons/icon19.png",
-    "default_title": "Searching youtube...spotify...",
+    "default_title": "Open in Spotify",
     "default_popup": "src/page_action/page_action.html"
   },
   "permissions": [
