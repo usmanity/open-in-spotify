@@ -30,18 +30,17 @@ var addLink = function(){
 	var url = 'https://api.spotify.com/v1/search?type=track&query=' + songTitle;
 	url = url.split(' ').join('+');
 	var spotifyResponse;
-	var menuLink = $("#action-panel-overflow-button");
-	var amazonTitle = songTitle.split(' ').join('%20');
-	var amazonLink = "<a class='amazon-link' target='_blank' href='http://smile.amazon.com/gp/search?ie=UTF8&camp=1789&creative=9325&linkCode=ur2&tag=triangleface-20&linkId=U6QIH3JDQYXL2I7B&keywords="+ amazonTitle +"'><img class='amazon-link-image' src='http://mhmd.us/1iHuB+'></a>";
-	menuLink.parent().parent().after(amazonLink);
+	// var menuLink = $("#action-panel-overflow-button");
+	// var amazonTitle = songTitle.split(' ').join('%20');
+	// var amazonLink = "<a class='amazon-link' target='_blank' href='http://smile.amazon.com/gp/search?ie=UTF8&camp=1789&creative=9325&linkCode=ur2&tag=triangleface-20&linkId=U6QIH3JDQYXL2I7B&keywords="+ amazonTitle +"'><img class='amazon-link-image' src='http://mhmd.us/1iHuB+'></a>";
+	// menuLink.parent().parent().after(amazonLink);
 	$.get(url, function(data){
 			spotifyResponse = data;
 			link = data.tracks.items[0].uri;
 			var find = $("<a href='" + link +"' class='find-on-spotify' alt='This will pause YouTube'>Play in Spotify</a>");
 			button.append(find);
 			$('.find-on-spotify').click(pausePlayer);
-	})
-
+	});
 }
 
 var checkLocation = function(){
