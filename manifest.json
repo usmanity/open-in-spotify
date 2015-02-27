@@ -1,6 +1,6 @@
 {
   "name": "Youtube to Spotify",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "manifest_version": 2,
   "description": "One-click YouTube to Spotify button.",
   "homepage_url": "http://usmanity.com/open-in-spotify",
@@ -12,15 +12,6 @@
     "256": "icons/icon256.png"
   },
   "default_locale": "en",
-  "background": {
-    "page": "src/bg/background.html",
-    "persistent": true
-  },
-  "page_action": {
-    "default_icon": "icons/icon19.png",
-    "default_title": "Open in Spotify",
-    "default_popup": "src/page_action/page_action.html"
-  },
   "permissions": [
     "https://*.youtube.com/*"
   ],
