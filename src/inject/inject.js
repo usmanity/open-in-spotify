@@ -38,6 +38,9 @@ var addLink = function(){
 			spotifyResponse = data;
 			link = data.tracks.items[0].uri;
 			var find = $("<a href='" + link +"' class='find-on-spotify' alt='This will pause YouTube'>Play in Spotify</a>");
+			find.css({
+				"background-image": "url(" + chrome.extension.getURL("src/images/spotify.png") + ")"
+			});
 			button.append(find);
 			$('.find-on-spotify').click(pausePlayer);
 	});

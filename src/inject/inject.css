@@ -1,6 +1,3 @@
-/**
- * Place your custom CSS styles here.
- **/
 .find-on-spotify {
   display: inline-block;
   float: left;
@@ -13,7 +10,6 @@
   background-color: #E62117;
   border-radius: 2px;
   top: -24px;
-  background-image: url('http://mhmd.us/116Fr+');
   background-size: 15px;
   background-repeat: no-repeat;
   background-position: 8px center;
