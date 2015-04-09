@@ -22,13 +22,22 @@
 .amazon-link-image {
   width: 20px;
 }
-.amazon-link {
+.amazon-link, .homepage-link {
   position: relative;
   top: 5px;
   opacity: 0.4;
   height: 30px;
   padding: 7px;
 }
-.amazon-link:hover {
+.homepage-link {
+  top: 2px;
+}
+.homepage-link-image {
+  width: 16px;
+}
+.fb-link-image {
+  width: 17px;
+}
+.amazon-link:hover, .homepage-link:hover {
   opacity: 1.0;
 }
