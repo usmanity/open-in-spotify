@@ -5,11 +5,6 @@ chrome.extension.sendMessage({}, function (response) {
             addLink();
         }
     }, 10);
-    var locationInterval = window.setInterval(checkLocation, 100)
-});
-
-chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
-    console.log("yoyo");
 });
 
 var currentLocation = window.location.href;
@@ -28,7 +23,7 @@ var checkLocation = function () {
             }
         }, 100);
     }
-}
+};
 
 var addLink = function () {
     if (window.location.href.indexOf('watch') === -1) {
@@ -54,24 +49,12 @@ var addLink = function () {
         button.append(find);
         $('.find-on-spotify').click(pausePlayer);
     });
-}
+};
 
 var sanitizeTitle = function (title) {
-    var _has = function (char) {
-        return title.indexOf(char) !== -1
-    }
-    var cleanTitle = title;
-    if (_has('(') || _has('[') || _has('{')) {
-        var matches = title.match(/\(.*\)|\[.*\]|\{.*\}/);
-        if (matches.length > 0) {
-            for (var i in matches) {
-                cleanTitle = title.replace(/\(.*\)|\[.*\]|\{.*\}/, '').replace(/ - /, ' ').replace(/-/, ' ');
-            }
-        }
-    }
-    return cleanTitle;
-}
+    return title.replace(/\(.*\)|\[.*\]|\{.*\}/g, '').replace(/-/, ' ').replace(/ +(?= )/g,'');
+};
 
 var pausePlayer = function () {
     $('.html5-player-chrome .ytp-button-pause').click()
-}
+};
