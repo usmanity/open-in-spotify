@@ -13,6 +13,7 @@
   background-size: 15px;
   background-repeat: no-repeat;
   background-position: 8px center;
+  height: 15px;
 }
 .find-on-spotify:hover {
   cursor: pointer;

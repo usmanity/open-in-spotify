@@ -1,9 +1,9 @@
 {
-  "name": "Youtube to Spotify",
-  "version": "1.4.6",
+  "name": "Open in Spotify",
+  "version": "1.4.7",
   "manifest_version": 2,
   "description": "One-click YouTube to Spotify button.",
-  "homepage_url": "https://usmanity.com/open-in-spotify",
+  "homepage_url": "https://github.com/usmanity/open-in-spotify",
   "icons": {
     "16": "icons/icon16.png",
     "19": "icons/icon19.png",
