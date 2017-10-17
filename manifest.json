@@ -1,6 +1,6 @@
 {
   "name": "Open in Spotify",
-  "version": "1.4.7",
+  "version": "2.0.0",
   "manifest_version": 2,
   "description": "One-click YouTube to Spotify button.",
   "homepage_url": "https://github.com/usmanity/open-in-spotify",
