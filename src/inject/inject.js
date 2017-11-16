@@ -2,28 +2,28 @@ chrome.extension.sendMessage({}, function(response) {
 	var readyStateCheckInterval = setInterval(function() {
 	if (document.readyState === "complete") {
 		clearInterval(readyStateCheckInterval);
-		addLink();
+		if (buttonExists()) {
+			console.log('-----------BUTTON exists--------');
+			addLink();
+		}		
 	}
-	}, 1);
+	}, 100);
 	var locationInterval = window.setInterval(checkLocation, 100)
 });
 
 var currentLocation = window.location.href;
-var buttonExists = false;
 var feelingLucky = "https://www.google.com/search?btnI=I%27m+Feeling+Lucky&q="
 
 var addLink = function(){
-	console.log('...working');
-	if (window.location.href.indexOf('watch') !== -1) {
-		buttonExists = false;
-		return;
-	}
+	console.log('Trying to add a link yo');
+	// if (window.location.href.indexOf('watch') !== -1) {
+	// 	return;
+	// }
 	var songTitle = $.trim($('#eow-title[title]').text().replace(/'/g, ""));
 	var songTitle = sanitizeTitle(songTitle);
 	var artistName = '';
 	var button = jQuery("#subscribe-button");
 	var link = "https://play.spotify.com/search/" + songTitle;
-	buttonExists = true;
 	var url = 'https://api.spotify.com/v1/search?type=track&query=' + songTitle;
 	url = url.split(' ').join('+');
 	var spotifyResponse;
@@ -41,14 +41,13 @@ var addLink = function(){
 			artistName = artistName.replace(" ", "%20");
 			var hLink = feelingLucky + artistName;
 			var homepage = "<a class='homepage-link' target='_blank' href='"+ hLink + "'><img class='homepage-link-image' src='"+ chrome.extension.getURL("src/images/website.png") +"'></a>";
-			var fbLink = "https://www.facebook.com/search/str/"+ artistName +"/keywords_top?ref=usmanity.com";
-			var facebook = "<a class='homepage-link' target='_blank' href='"+ fbLink + "'><img class='fb-link-image' src='"+ chrome.extension.getURL("src/images/fb.png") +"'></a>";
+			// var fbLink = "https://www.facebook.com/search/str/"+ artistName +"/keywords_top?ref=usmanity.com";
+			// var facebook = "<a class='homepage-link' target='_blank' href='"+ fbLink + "'><img class='fb-link-image' src='"+ chrome.extension.getURL("src/images/fb.png") +"'></a>";
 	});
 }
 
 var checkLocation = function(){
 	if (window.location.href !== currentLocation){
-		buttonExists = false;
 		if (!buttonExists && $('#progress').length === 0){
 			addLink();
 		}
@@ -76,4 +75,12 @@ var sanitizeTitle = function(title){
 
 var pausePlayer = function(){
 	$('.html5-player-chrome .ytp-button-pause').click()
+}
+
+var buttonExists = function () {
+	return window.location.href.indexOf('watch') !== -1 && $('#subscribe-button').length;
+}
+
+getSpotifyToken() => {
+	return 'fca34c0c1115412eac543d33861b6a50';
 }
