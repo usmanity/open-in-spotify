@@ -81,6 +81,6 @@ var buttonExists = function () {
 	return window.location.href.indexOf('watch') !== -1 && $('#subscribe-button').length;
 }
 
-getSpotifyToken() => {
+var getSpotifyToken = function () {
 	return 'fca34c0c1115412eac543d33861b6a50';
 }
