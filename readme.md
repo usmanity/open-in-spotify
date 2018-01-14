@@ -1,6 +1,12 @@
-**Open in spotify**
+# Open in spotify
 
-This is an extension for Chrome. It finds the current song you're listening to on YouTube and puts a small button that allows you to open it in Spotify. 
+One-click Youtube to Spotify Chrome extension.
+
+Use this extension to open a song directly from Youtube in Spotify. 
 
 [Chrome Store](http://mhmd.us/1lFnH)
 
+## Version 2 Notice
+
+Extension now requires you to authorize with Spotify since 
+the previous implementation would break after a couple of uses.
